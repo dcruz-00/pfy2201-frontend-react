@@ -402,6 +402,11 @@ html, body {
   color: var(--color-oferta);
 }
 
+.card-en-carrito {
+  font-size: 0.85em;
+  color: var(--color-acento);
+}
+
 .lista-opiniones {
   list-style: none;
   margin: var(--espacio-md) 0 0 0;

@@ -149,6 +149,7 @@ function App() {
           onCambiarTermino={setTermino}
           onLimpiarFiltros={manejarLimpiarFiltros}
           onReintentar={manejarReintentar}
+          carrito={carrito}
           onAgregar={manejarAgregar}
         />
 

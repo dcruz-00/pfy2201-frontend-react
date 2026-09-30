@@ -4,7 +4,7 @@ import { usarImagenFallback } from '../utils/imagenes.js'
 
 const DURACION_CONFIRMACION_MS = 1200
 
-function TarjetaProducto({ producto, onAgregar }) {
+function TarjetaProducto({ producto, enCarrito, onAgregar }) {
   const enOferta = tieneOferta(producto)
   const [agregado, setAgregado] = useState(false)
   const temporizadorRef = useRef(null)
@@ -20,6 +20,14 @@ function TarjetaProducto({ producto, onAgregar }) {
     setAgregado(true)
     clearTimeout(temporizadorRef.current)
     temporizadorRef.current = setTimeout(() => setAgregado(false), DURACION_CONFIRMACION_MS)
+  }
+
+  // La confirmación breve tiene prioridad; después el botón refleja si el producto ya está en el carrito.
+  let textoBoton = 'Agregar al carrito'
+  if (agregado) {
+    textoBoton = '✔ Agregado'
+  } else if (enCarrito > 0) {
+    textoBoton = 'Agregar otro'
   }
 
   return (
@@ -56,10 +64,14 @@ function TarjetaProducto({ producto, onAgregar }) {
             <p className="card-precio">{formatearPrecio(producto.precio)}</p>
           )}
 
-          {/* Todas las tarjetas tienen el mismo texto de botón; aria-label lo distingue. */}
+          {enCarrito > 0 && (
+            <p className="card-en-carrito">En tu carrito: {enCarrito}</p>
+          )}
+
+          {/* El texto visible no nombra el producto; aria-label lo identifica. */}
           <button type="button" className={agregado ? 'btn btn-accion agregado' : 'btn btn-accion'}
             onClick={manejarAgregar} aria-label={`Agregar ${producto.nombre} al carrito`}>
-            {agregado ? '✔ Agregado' : 'Agregar al carrito'}
+            {textoBoton}
           </button>
         </div>
 

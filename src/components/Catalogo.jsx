@@ -3,8 +3,9 @@ import TarjetaProducto from './TarjetaProducto.jsx'
 import Buscador from './Buscador.jsx'
 import Estado from './Estado.jsx'
 import { filtrarProductos, describirFiltros } from '../utils/catalogo.js'
+import { cantidadEnCarrito } from '../utils/carrito.js'
 
-function Catalogo({ productos, carga, categoria, termino, onCambiarTermino, onLimpiarFiltros, onReintentar, onAgregar }) {
+function Catalogo({ productos, carga, categoria, termino, onCambiarTermino, onLimpiarFiltros, onReintentar, carrito, onAgregar }) {
   const campoBusquedaRef = useRef(null)
 
   const visibles = filtrarProductos(productos, categoria, termino)
@@ -45,7 +46,8 @@ function Catalogo({ productos, carga, categoria, termino, onCambiarTermino, onLi
 
         <ul className="grid-productos row" aria-busy={carga.tipo === 'cargando'}>
           {visibles.map((producto) => (
-            <TarjetaProducto key={producto.id} producto={producto} onAgregar={onAgregar} />
+            <TarjetaProducto key={producto.id} producto={producto}
+              enCarrito={cantidadEnCarrito(carrito, producto.id)} onAgregar={onAgregar} />
           ))}
         </ul>
       </div>

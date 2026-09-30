@@ -27,6 +27,10 @@ export function quitarProducto(carrito, id) {
   return carrito.filter((linea) => linea.id !== id)
 }
 
+export function cantidadEnCarrito(carrito, id) {
+  return carrito.find((linea) => linea.id === id)?.cantidad ?? 0
+}
+
 export function buscarProducto(productos, id) {
   return productos.find((producto) => producto.id === id)
 }
