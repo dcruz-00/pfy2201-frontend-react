@@ -133,11 +133,13 @@ function App() {
 
   return (
     <>
-      <Navbar
-        categoria={categoria}
-        onCambiarCategoria={setCategoria}
-        cantidadArticulos={resumen.articulos}
-      />
+      <header>
+        <Navbar
+          categoria={categoria}
+          onCambiarCategoria={setCategoria}
+          cantidadArticulos={resumen.articulos}
+        />
+      </header>
       <Hero />
 
       <main>
