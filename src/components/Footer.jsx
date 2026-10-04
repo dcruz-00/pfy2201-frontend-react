@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <footer className="footer" id="contacto">
+    <footer className="footer">
       <h2>Contacto</h2>
       <address>
         <p>Dirección: Av. Los Alerces 123, Santiago, Chile</p>

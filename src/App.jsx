@@ -4,6 +4,7 @@ import Hero from './components/Hero.jsx'
 import Catalogo from './components/Catalogo.jsx'
 import Carrito from './components/Carrito.jsx'
 import Opiniones from './components/Opiniones.jsx'
+import FormularioContacto from './components/FormularioContacto.jsx'
 import Footer from './components/Footer.jsx'
 import { cargarProductos } from './utils/catalogo.js'
 import { mensajeParaUsuario } from './utils/red.js'
@@ -168,6 +169,8 @@ function App() {
         />
 
         <Opiniones />
+
+        <FormularioContacto />
       </main>
 
       <Footer />

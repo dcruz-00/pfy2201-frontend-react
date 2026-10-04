@@ -391,6 +391,12 @@ html, body {
   font-weight: bold;
 }
 
+.estado-exito {
+  color: var(--color-acento);
+  font-style: normal;
+  font-weight: bold;
+}
+
 .grid-productos .card-precio {
   font-weight: bold;
   color: var(--color-acento);
@@ -494,4 +500,21 @@ html, body {
 .resumen-total {
   margin: 0;
   font-size: 1.2em;
+}
+
+/* ============================================
+   10. COMPONENTES - FORMULARIO DE CONTACTO
+   ============================================ */
+.formulario-contacto {
+  --bs-form-invalid-color: var(--color-oferta);
+  --bs-form-invalid-border-color: var(--color-oferta);
+  max-width: 720px;
+}
+
+.formulario-contacto .form-label {
+  font-weight: bold;
+}
+
+.formulario-contacto .estado {
+  margin: var(--espacio-md) 0;
 }

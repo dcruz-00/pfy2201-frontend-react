@@ -1,5 +1,5 @@
-// Mensaje de estado de una sección (cargando, error, sin resultados, info).
-//   tipo:    'cargando' | 'error' | 'vacio' | 'info' | null
+// Mensaje de estado de una sección (cargando, error, sin resultados, info, éxito).
+//   tipo:    'cargando' | 'error' | 'vacio' | 'info' | 'exito' | null
 //   accion:  opcional, { texto, alClick }
 //
 // El contenedor se renderiza siempre, incluso vacío: los lectores de pantalla
